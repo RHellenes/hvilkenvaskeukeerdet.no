@@ -1,12 +1,17 @@
 <template>
   <div class="table">
-    <div class="table__row">
-      <div class="table__column">Ukenr</div>
+    <div class="table__row table__row--header">
+      <div class="table__column"></div>
       <div v-for="chore in chores" :key="`${chore}`" class="table__column">
         {{ chore }}
       </div>
     </div>
-    <div v-for="week in tableData" :key="week.nr" class="table__row">
+    <div
+      v-for="week in tableData"
+      :key="week.nr"
+      class="table__row"
+      :class="currentWeek === week.nr && 'table__row--highlight'"
+    >
       <div class="table__column">
         {{ week.nr }}
       </div>
@@ -36,7 +41,7 @@ export default {
       const totalWeeks = this.$dayjs().isoWeeksInYear() + 1
       let coolPeopleCopy = [...this.coolPeople]
       const data = []
-      const outerCounter = 0
+      // const outerCounter = 0
       for (let index = 1; index < totalWeeks; index++) {
         const lastPerson = coolPeopleCopy.pop()
         // const last = coolPeopleCopy[3]
@@ -50,6 +55,9 @@ export default {
       }
 
       return data
+    },
+    currentWeek() {
+      return this.$dayjs().isoWeek()
     },
   },
   mounted() {
@@ -75,19 +83,38 @@ export default {
 
 <style lang="scss" scoped>
 .table {
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+
   &__row {
-    width: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    border-bottom: 1px solid;
+    &--header {
+      & * {
+        background: white !important;
+        font-weight: bolder;
+      }
+    }
+    &--highlight {
+      //border-bottom: 2px solid;
+    }
   }
   &__column {
-    width: 20%;
+    width: 30%;
+    padding: 1em 1em 0.2em 1em;
+    &:first-of-type {
+      //background: red;
+      width: 10%;
+    }
+    &:nth-of-type(even) {
+      background: #35495e1c;
+    }
   }
 }
 </style>

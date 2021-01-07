@@ -15,9 +15,10 @@ export default {
 </script>
 
 <style>
-.container {
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,5 +45,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
+} */
 </style>

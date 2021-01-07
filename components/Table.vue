@@ -1,19 +1,20 @@
 <template>
   <div class="table">
-    <div class="table__row" >
-      <div class="table__column" >
-        Ukenr
-      </div>
-      <div class="table__column" v-for="chore in chores" :key="`${chore}`">
+    <div class="table__row">
+      <div class="table__column">Ukenr</div>
+      <div v-for="chore in chores" :key="`${chore}`" class="table__column">
         {{ chore }}
       </div>
-      
     </div>
-    <div class="table__row" v-for="week in tableData" :key="week.nr">
-      <div class="table__column" >
+    <div v-for="week in tableData" :key="week.nr" class="table__row">
+      <div class="table__column">
         {{ week.nr }}
       </div>
-      <div class="table__column" v-for="coolPerson in week.coolPersons" :key="`${coolPerson}${week.nr}`">
+      <div
+        v-for="coolPerson in week.coolPersons"
+        :key="`${coolPerson}${week.nr}`"
+        class="table__column"
+      >
         {{ coolPerson }}
       </div>
     </div>
@@ -25,59 +26,51 @@ export default {
   name: 'Table',
   data() {
     return {
-      coolPeople: ['Jenny' ,'René', 'Sofie', 'Sondre'],
+      coolPeople: ['Jenny', 'René', 'Sofie', 'Sondre'],
       chores: ['Kjøkken', 'Gulv', 'Bad', 'Søppel'],
-    }
+    };
   },
   computed: {
     tableData() {
       // const weeks = this.$dayjs(new Date()).isoWeek()
-      const totalWeeks = this.$dayjs().isoWeeksInYear() + 1
-      let coolPeopleCopy = [...this.coolPeople]
-      const data = []
-      let outerCounter = 0
+      const totalWeeks = this.$dayjs().isoWeeksInYear() + 1;
+      let coolPeopleCopy = [...this.coolPeople];
+      const data = [];
+      const outerCounter = 0;
       for (let index = 1; index < totalWeeks; index++) {
-        
+        const lastPerson = coolPeopleCopy.pop();
+        // const last = coolPeopleCopy[3]
+        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy);
+        const week = {
+          nr: index,
+          coolPersons: [...coolPeopleCopy],
+        };
 
-       
-
-        const lastPerson = coolPeopleCopy.pop()
-        //const last = coolPeopleCopy[3]
-        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
-         const week = {
-           nr: index,
-          coolPersons: [...coolPeopleCopy]
-        }
-        
-        data.push(week)
+        data.push(week);
       }
 
-      return data
+      return data;
     },
   },
   mounted() {
-      // const weeks = this.$dayjs(new Date()).isoWeek()
-      const totalWeeks = this.$dayjs().isoWeeksInYear()
-      let coolPeopleCopy = [...this.coolPeople]
-      const data = []
-      let outerCounter = 0
-      for (let index = 1; index < totalWeeks; index++) {
-        
+    // const weeks = this.$dayjs(new Date()).isoWeek()
+    const totalWeeks = this.$dayjs().isoWeeksInYear();
+    let coolPeopleCopy = [...this.coolPeople];
+    const data = [];
+    const outerCounter = 0;
+    for (let index = 1; index < totalWeeks; index++) {
+      const lastPerson = coolPeopleCopy.pop();
+      // const last = coolPeopleCopy[3]
+      coolPeopleCopy = [lastPerson].concat(coolPeopleCopy);
+      const week = {
+        nr: index,
+        persons: [...coolPeopleCopy],
+      };
 
-       
-
-        const lastPerson = coolPeopleCopy.pop()
-        //const last = coolPeopleCopy[3]
-        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
-         const week = {
-           nr: index,
-          persons: [...coolPeopleCopy]
-        }
-        
-        data.push(week)
-      }
+      data.push(week);
     }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -86,18 +79,15 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-    flex-wrap: wrap;
-  &__row{
+  flex-wrap: wrap;
+  &__row {
     width: 300px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
-  &__column{
+  &__column {
     width: 20%;
-
   }
-
-
 }
 </style>

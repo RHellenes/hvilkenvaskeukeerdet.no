@@ -28,49 +28,49 @@ export default {
     return {
       coolPeople: ['Jenny', 'René', 'Sofie', 'Sondre'],
       chores: ['Kjøkken', 'Gulv', 'Bad', 'Søppel'],
-    };
+    }
   },
   computed: {
     tableData() {
       // const weeks = this.$dayjs(new Date()).isoWeek()
-      const totalWeeks = this.$dayjs().isoWeeksInYear() + 1;
-      let coolPeopleCopy = [...this.coolPeople];
-      const data = [];
-      const outerCounter = 0;
+      const totalWeeks = this.$dayjs().isoWeeksInYear() + 1
+      let coolPeopleCopy = [...this.coolPeople]
+      const data = []
+      const outerCounter = 0
       for (let index = 1; index < totalWeeks; index++) {
-        const lastPerson = coolPeopleCopy.pop();
+        const lastPerson = coolPeopleCopy.pop()
         // const last = coolPeopleCopy[3]
-        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy);
+        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
         const week = {
           nr: index,
           coolPersons: [...coolPeopleCopy],
-        };
+        }
 
-        data.push(week);
+        data.push(week)
       }
 
-      return data;
+      return data
     },
   },
   mounted() {
     // const weeks = this.$dayjs(new Date()).isoWeek()
-    const totalWeeks = this.$dayjs().isoWeeksInYear();
-    let coolPeopleCopy = [...this.coolPeople];
-    const data = [];
-    const outerCounter = 0;
+    const totalWeeks = this.$dayjs().isoWeeksInYear()
+    let coolPeopleCopy = [...this.coolPeople]
+    const data = []
+    const outerCounter = 0
     for (let index = 1; index < totalWeeks; index++) {
-      const lastPerson = coolPeopleCopy.pop();
+      const lastPerson = coolPeopleCopy.pop()
       // const last = coolPeopleCopy[3]
-      coolPeopleCopy = [lastPerson].concat(coolPeopleCopy);
+      coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
       const week = {
         nr: index,
         persons: [...coolPeopleCopy],
-      };
+      }
 
-      data.push(week);
+      data.push(week)
     }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

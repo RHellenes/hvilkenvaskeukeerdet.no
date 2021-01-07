@@ -26,8 +26,8 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    semi: ['warn', 'always'],
-    'prettier/prettier': ['error', { singleQuote: true }],
+    semi: ['error', 'never'],
+    'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     'no-unused-vars': 'warn',
   },
-};
+}

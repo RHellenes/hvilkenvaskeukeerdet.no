@@ -13,14 +13,18 @@
       :class="currentWeek === week.nr && 'table__row--highlight'"
     >
       <div class="table__column">
-        {{ week.nr }}
+        <span>
+          {{ week.nr }}
+        </span>
       </div>
       <div
         v-for="coolPerson in week.coolPersons"
         :key="`${coolPerson}${week.nr}`"
         class="table__column"
       >
-        {{ coolPerson }}
+        <span>
+          {{ coolPerson }}
+        </span>
       </div>
     </div>
   </div>
@@ -100,20 +104,30 @@ export default {
         background: white !important;
         font-weight: bolder;
       }
+      position: sticky;
     }
     &--highlight {
-      //border-bottom: 2px solid;
+      font-weight: bolder;
+      background: #bfd3ec36;
     }
   }
   &__column {
     width: 30%;
-    padding: 1em 1em 0.2em 1em;
+    padding: 2em 1em 0.2em 1em;
+    position: relative;
+
     &:first-of-type {
       //background: red;
       width: 10%;
     }
     &:nth-of-type(even) {
       background: #35495e1c;
+    }
+    & span {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
   }
 }

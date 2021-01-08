@@ -14,7 +14,7 @@
                   v-for="chore in chores"
                   :key="`${chore}`"
                   scope="col"
-                  class="pr-0 py-3 pl-1 text-left text-xs font-medium text-teal-900 uppercase tracking-wider subpixel-antialiased"
+                  class="pr-0 py-3 pl-1 text-left text-xs font-medium text-gray-800 uppercase tracking-wider subpixel-antialiased"
                 >
                   {{ chore }}
                 </th>
@@ -24,18 +24,19 @@
               <tr
                 v-for="week in tableData"
                 :key="week.nr"
+                class="text-gray-600"
                 :class="[
                   !(week.nr % 2) && 'bg-gray-50',
-                  currentWeek === week.nr && 'font-medium bg-teal-50',
+                  currentWeek === week.nr && 'font-semibold text-teal-700',
                 ]"
               >
                 <td
-                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap text-teal-900 subpixel-antialiased text-center"
+                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap subpixel-antialiased text-center"
                 >
                   {{ week.nr }}
                 </td>
                 <td
-                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap text-teal-900 subpixel-antialiased"
+                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap subpixel-antialiased"
                   v-for="coolPerson in week.coolPersons"
                   :key="`${coolPerson}${week.nr}`"
                 >

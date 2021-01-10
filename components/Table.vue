@@ -1,11 +1,9 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="flex flex-col" style="width: 100%">
+  <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-2 lg:px-8">
-        <div
-          class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-        >
+        <div class="shadow overflow-hidden border-b border-gray-200 rounded-md">
           <table class="min-w-full divide-y-2 divide-gray-200">
             <thead class="bg-gray-100">
               <tr>
@@ -56,37 +54,7 @@
 <script>
 export default {
   name: 'Table',
-  data() {
-    return {
-      coolPeople: ['Jenny', 'René', 'Sofie', 'Sondre'],
-      chores: ['Kjøkken', 'Gulv', 'Bad', 'Søppel'],
-    }
-  },
-  computed: {
-    tableData() {
-      // const weeks = this.$dayjs(new Date()).isoWeek()
-      const totalWeeks = this.$dayjs().isoWeeksInYear() + 1
-      let coolPeopleCopy = [...this.coolPeople]
-      const data = []
-      // const outerCounter = 0
-      for (let index = 1; index < totalWeeks; index++) {
-        const lastPerson = coolPeopleCopy.pop()
-        // const last = coolPeopleCopy[3]
-        coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
-        const week = {
-          nr: index,
-          coolPersons: [...coolPeopleCopy],
-        }
-
-        data.push(week)
-      }
-
-      return data
-    },
-    currentWeek() {
-      return this.$dayjs().isoWeek()
-    },
-  },
+  props: ['tableData', 'currentWeek', 'chores'],
 }
 </script>
 

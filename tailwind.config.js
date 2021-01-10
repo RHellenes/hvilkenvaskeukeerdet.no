@@ -21,8 +21,13 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       teal: colors.teal,
+      white: colors.white,
     },
     extend: {},
+  },
+  fontFamily: {
+    sans: ['Open Sans', 'sans-serif'],
+    serif: ['Merriweather', 'serif'],
   },
   variants: {
     extend: {},

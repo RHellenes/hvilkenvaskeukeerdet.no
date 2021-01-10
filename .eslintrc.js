@@ -7,11 +7,6 @@ module.exports = {
   },
 
   extends: [
-    // '@nuxtjs',
-    // 'prettier',
-    // 'prettier/vue',
-    // 'plugin:prettier/recommended',
-    // 'plugin:nuxt/recommended',
     'plugin:vue/essential',
     'plugin:prettier/recommended',
     'eslint:recommended',
@@ -29,5 +24,6 @@ module.exports = {
     semi: ['error', 'never'],
     'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     'no-unused-vars': 'warn',
+    'no-irregular-whitespace': 'warn',
   },
 }

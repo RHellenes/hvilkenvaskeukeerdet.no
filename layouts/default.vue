@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div class="bg-gray-50 min-h-screen">
     <Nuxt />
   </div>
 </template>
 
 <style>
+body {
+  margin: 0;
+}
 /* html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -16,9 +19,6 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   width: 100%;
-}
-body {
-  margin: 0;
 }
 
 *,

@@ -1,6 +1,6 @@
 <template>
   <div class="py-3 px-3">
-    <Quote :thisWeekProverb="proverbs[currentWeek]" />
+    <Quote :thisWeekProverb="proverbs[currentWeek - 1]" />
     <List :tableData="tableData" :currentWeek="currentWeek" :chores="chores" />
     <!-- <Table :tableData="tableData" :currentWeek="currentWeek" :chores="chores" /> -->
   </div>

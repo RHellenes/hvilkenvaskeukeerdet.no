@@ -1,7 +1,16 @@
 <template>
-  <div class="py-3 px-3">
-    <Quote :thisWeekProverb="proverbs[currentWeek - 1]" />
-    <List :tableData="tableData" :currentWeek="currentWeek" :chores="chores" />
+  <div class="py-3 px-3 flex flex-col gap-4 max-w-3xl m-auto">
+    <div class="md:w-full">
+      <Quote :thisWeekProverb="proverbs[currentWeek - 1]" />
+    </div>
+
+    <div class="md:w-1/2">
+      <List
+        :tableData="tableData"
+        :currentWeek="currentWeek"
+        :chores="chores"
+      />
+    </div>
   </div>
 </template>
 
@@ -33,8 +42,8 @@ export default {
   },
   data() {
     return {
-      coolPeople: ['Jenny', 'René', 'Sofie', 'Sondre'],
-      chores: ['Kjøkken', 'Gulv', 'Bad', 'Søppel'],
+      coolPeople: ['Jenny', 'Sunniva', 'René', 'Sofie', 'Sondre'],
+      chores: ['Kjøkken', 'Gulv', 'Pant & Støv', 'Bad', 'Søppel'],
     }
   },
   computed: {

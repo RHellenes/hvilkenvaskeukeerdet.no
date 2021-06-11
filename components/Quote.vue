@@ -1,16 +1,16 @@
 <template>
   <div
-    class="container mx-auto bg-white shadow-md rounded-md pl-3 py-3 grid grid-cols-4 grid-rows-2 focus:outline-none"
+    class="w-full container mx-auto bg-white shadow-md rounded-md pl-3 py-3 flex focus:outline-none flex-wrap"
     :class="showExplanation && 'grid-rows-3'"
     @click="() => (showExplanation = !showExplanation)"
   >
     <img
       :src="`/images/coolPerson-${thisWeekProverb.coolPerson.toLowerCase()}.png`"
       :alt="`Bra bilde av ${thisWeekProverb.coolPerson}`"
-      class="col-span-1 row-span-2 rounded-full"
+      class="w-28 rounded-full"
     />
 
-    <div class="col-span-3 row-span-2 px-2 flex flex-col justify-between">
+    <div class="flex-grow px-2 flex flex-col justify-center">
       <p class="text-lg leading-6">
         <span
           class="text-xs tracking-wide uppercase font-semibold text-gray-500"
@@ -24,11 +24,11 @@
         –{{ thisWeekProverb.coolPerson }}
       </p>
     </div>
-    <div
-      v-if="showExplanation"
-      class="col-span-4 row-span-1 flex flex-col justify-end"
-    >
+    <div v-if="showExplanation" class="w-full flex justify-center">
       <p class="text-sm text-gray-700">({{ thisWeekProverb.betydning }})</p>
+    </div>
+    <div v-else class="w-full flex justify-center">
+      <p class="text-sm text-gray-700 cursor-pointer">?</p>
     </div>
   </div>
 </template>

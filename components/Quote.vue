@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full container mx-auto bg-white shadow-md rounded-md pl-3 py-3 flex focus:outline-none flex-wrap"
+    class="w-full container mx-auto bg-white shadow-md rounded-md pl-3 py-3 flex focus:outline-none flex-wrap items-start"
     :class="showExplanation && 'grid-rows-3'"
     @click="() => (showExplanation = !showExplanation)"
   >

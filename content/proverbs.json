@@ -1,6 +1,5 @@
-
 {
-  "data" :[
+  "data": [
     {
       "ordtak": "Ikke slå hodet i veggen.",
       "betydning": "Å prøve å oppnå det umulige.",
@@ -134,7 +133,7 @@
     {
       "ordtak": "Å sitte på varmt kull.",
       "betydning": "Å være utolmodig.",
-      "coolPerson": "Sofie"
+      "coolPerson": "Sunniva"
     },
     {
       "ordtak": "Å holde en ål i halen.",
@@ -189,7 +188,7 @@
     {
       "ordtak": "Å ha tannverk bak øra.",
       "betydning": "Å være en person med munchhausen syndrom.",
-      "coolPerson": "Sondre"
+      "coolPerson": "Sunniva"
     },
     {
       "ordtak": "Å tisse mot månen.",
@@ -199,7 +198,7 @@
     {
       "ordtak": "Å gifte seg under sopelimen.",
       "betydning": "Å bo sammen uten å være gift.",
-      "coolPerson": "René"
+      "coolPerson": "Sondre"
     },
     {
       "ordtak": "Å ha hull i taket.",
@@ -219,7 +218,7 @@
     {
       "ordtak": "Å få lokket på hodet.",
       "betydning": "Å ende opp med å ta ansvar.",
-      "coolPerson": "René"
+      "coolPerson": "Sunniva"
     },
     {
       "ordtak": "Ikke stek herringen for å få rognen.",
@@ -259,7 +258,7 @@
     {
       "ordtak": "Hvis jeg ikke har ansvar for de, lar jeg gjess være gjess.",
       "betydning": "Ikke bland deg i saker du ikke har noe med.",
-      "coolPerson": "René"
+      "coolPerson": "Sunniva"
     }
   ]
 }

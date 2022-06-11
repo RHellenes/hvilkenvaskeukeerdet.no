@@ -7,7 +7,7 @@
           <table class="min-w-full divide-y-2 divide-gray-200">
             <thead class="bg-gray-100">
               <tr>
-                <th class="py-3 pb-1 pl-1 pr-1"></th>
+                <th class="py-3 pb-1 pl-1 pr-1" />
                 <th
                   v-for="chore in chores"
                   :key="`${chore}`"
@@ -34,9 +34,9 @@
                   {{ week.nr }}
                 </td>
                 <td
-                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap subpixel-antialiased"
                   v-for="coolPerson in week.coolPersons"
                   :key="`${coolPerson}${week.nr}`"
+                  class="py-3 pb-1 pl-1 pr-1 whitespace-nowrap subpixel-antialiased"
                 >
                   {{ coolPerson }}
                 </td>
@@ -53,12 +53,7 @@
 
 <script>
 export default {
-  name: 'Table',
-  props: ['tableData', 'currentWeek', 'chores'],
+  name: 'TableComponent',
+  props: ['tableData', 'currentWeek', 'chores']
 }
 </script>
-
-<style lang="scss" scoped>
-.table2 {
-}
-</style>

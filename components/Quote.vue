@@ -8,7 +8,7 @@
       :src="`/images/coolPerson-${thisWeekProverb.coolPerson.toLowerCase()}.png`"
       :alt="`Bra bilde av ${thisWeekProverb.coolPerson}`"
       class="w-28 rounded-full"
-    />
+    >
 
     <div class="flex-grow px-2 flex flex-col justify-center">
       <p class="text-lg leading-6">
@@ -17,7 +17,7 @@
         >
           Ukens visdomsord
         </span>
-        <br />
+        <br>
         {{ thisWeekProverb.ordtak }}
       </p>
       <p class="text-teal-800 font-bold text-right">
@@ -25,23 +25,27 @@
       </p>
     </div>
     <div v-if="showExplanation" class="w-full flex justify-center">
-      <p class="text-sm text-gray-700">({{ thisWeekProverb.betydning }})</p>
+      <p class="text-sm text-gray-700">
+        ({{ thisWeekProverb.betydning }})
+      </p>
     </div>
     <div v-else class="w-full flex justify-center">
-      <p class="text-sm text-gray-700 cursor-pointer">?</p>
+      <p class="text-sm text-gray-700 cursor-pointer">
+        ?
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Quote',
-  data() {
+  name: 'QuoteComponent',
+  props: ['thisWeekProverb', 'imageStrings'],
+  data () {
     return {
-      showExplanation: false,
+      showExplanation: false
     }
   },
-  props: ['thisWeekProverb', 'imageStrings'],
-  computed: {},
+  computed: {}
 }
 </script>

@@ -1,27 +1,45 @@
 <template>
-  <div class="py-3 px-3 flex flex-col gap-4 max-w-3xl m-auto">
+  <div class="flex flex-col max-w-3xl gap-4 px-3 py-3 m-auto">
     <div class="md:w-full">
-      <Quote :thisWeekProverb="proverbs[currentWeek - 1]" />
+      <Quote :this-week-proverb="proverbs[currentWeek - 1]" />
     </div>
 
     <div class="md:w-1/2">
       <List
-        :tableData="tableData"
-        :currentWeek="currentWeek"
+        :table-data="tableData"
+        :current-week="currentWeek"
         :chores="chores"
       />
     </div>
+
+    <PushTest />
   </div>
 </template>
 
 <script>
-// import Table from '@/components/Table'
+import PushTest from '@/components/PushTest.vue'
+import List from '@/components/List.vue'
+import Quote from '@/components/Quote.vue'
+
 export default {
-  name: 'Vaskeuke',
+  name: 'VaskeukePage',
   components: {
-    // Table,
+    List,
+    Quote,
+    PushTest
   },
-  head() {
+  async asyncData ({ $content }) {
+    const doc = await $content('proverbs').fetch()
+    const proverbs = doc.data
+    return { proverbs }
+  },
+  data () {
+    return {
+      coolPeople: ['Jenny', 'Sunniva', 'René', 'Sofie', 'Sondre'],
+      chores: ['Kjøkken', 'Gulv', 'Pant & Støv', 'Bad', 'Søppel']
+    }
+  },
+  head () {
     return {
       link: [
         {
@@ -30,24 +48,13 @@ export default {
           type: 'image/x-icon',
           href: `/images/coolPerson-${this.proverbs[
             this.currentWeek - 1
-          ].coolPerson.toLowerCase()}.png`,
-        },
-      ],
-    }
-  },
-  async asyncData({ $content }) {
-    const doc = await $content('proverbs').fetch()
-    const proverbs = doc.data
-    return { proverbs }
-  },
-  data() {
-    return {
-      coolPeople: ['Jenny', 'Sunniva', 'René', 'Sofie', 'Sondre'],
-      chores: ['Kjøkken', 'Gulv', 'Pant & Støv', 'Bad', 'Søppel'],
+          ].coolPerson.toLowerCase()}.png`
+        }
+      ]
     }
   },
   computed: {
-    tableData() {
+    tableData () {
       // const weeks = this.$dayjs(new Date()).isoWeek()
       const totalWeeks = this.$dayjs().isoWeeksInYear() + 1
       let coolPeopleCopy = [...this.coolPeople]
@@ -59,7 +66,7 @@ export default {
         coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
         const week = {
           nr: index,
-          coolPersons: [...coolPeopleCopy],
+          coolPersons: [...coolPeopleCopy]
         }
 
         data.push(week)
@@ -67,43 +74,9 @@ export default {
 
       return data
     },
-    currentWeek() {
+    currentWeek () {
       return this.$dayjs().isoWeek()
-    },
-  },
+    }
+  }
 }
 </script>
-
-<style>
-/* .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-} */
-</style>

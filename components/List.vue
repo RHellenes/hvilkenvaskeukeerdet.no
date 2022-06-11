@@ -25,29 +25,25 @@
 
 <script>
 export default {
-  name: 'List',
+  name: 'ListComp',
+  // eslint-disable-next-line vue/require-prop-types
   props: ['tableData', 'currentWeek', 'chores', 'thisWeekProverb'],
   computed: {
-    thisWeeksRotation() {
+    thisWeeksRotation () {
       return this.tableData[this.currentWeek - 1]
     },
-    concatinatedList() {
-      let list = []
+    concatinatedList () {
+      const list = []
       const thisWeeksRotation = this.thisWeeksRotation.coolPersons
       this.chores.forEach((chore, index) => {
         const obj = {
           chore,
-          coolPerson: thisWeeksRotation[index],
+          coolPerson: thisWeeksRotation[index]
         }
         list.push(obj)
       })
       return list
-    },
-  },
+    }
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-.list {
-}
-</style>

@@ -4,11 +4,11 @@
       <div
         v-for="(element, index) in concatinatedList"
         :key="element.chore"
-        class="grid grid-cols-4 px-4 py-5 sm:gap-4 sm:px-6"
+        class="grid grid-cols-6 px-4 py-5 sm:gap-4 sm:px-6"
         :class="index % 2 ? 'bg-white' : 'bg-gray-50'"
       >
-        <dt class="col-span-2 text-sm font-medium text-emerald-800">
-          {{ element.chore }}
+        <dt class="col-span-4 text-sm font-medium text-emerald-800">
+          <img :src="getIconLink(element.chore)" :aria-hidden="true" class="inline-block w-6 mr-4"> {{ element.chore }}
         </dt>
         <dd class="col-span-2 text-sm text-emerald-900">
           {{ element.coolPerson }}
@@ -38,6 +38,29 @@ export default {
         list.push(obj)
       })
       return list
+    }
+  },
+  methods: {
+    getIconLink (item) {
+      switch (item) {
+        case 'Kjøkken':
+          return 'https://fav.farm/🧑‍🍳'
+        case 'Gulv':
+          return 'https://fav.farm/🧹'
+
+        case 'Søppel':
+
+          return 'https://fav.farm/🗑'
+        case 'Pant & Støv':
+
+          return 'https://fav.farm/🍾'
+        case 'Bad':
+
+          return 'https://fav.farm/🪠'
+
+        default:
+          break
+      }
     }
   }
 }

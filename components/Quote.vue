@@ -1,35 +1,35 @@
 <template>
   <div
-    class="w-full container mx-auto bg-white shadow-md rounded-md pl-3 py-3 flex focus:outline-none flex-wrap items-start"
+    class="container flex flex-wrap items-start justify-center w-full py-3 pl-3 mx-auto bg-white rounded-md shadow-md focus:outline-none"
     :class="showExplanation && 'grid-rows-3'"
     @click="() => (showExplanation = !showExplanation)"
   >
     <img
       :src="`/images/coolPerson-${thisWeekProverb.coolPerson.toLowerCase()}.png`"
       :alt="`Bra bilde av ${thisWeekProverb.coolPerson}`"
-      class="w-28 rounded-full"
+      class="rounded-full w-28"
     >
 
-    <div class="flex-grow px-2 flex flex-col justify-center">
+    <div class="flex flex-col justify-center flex-grow px-2">
       <p class="text-lg leading-6">
         <span
-          class="text-xs tracking-wide uppercase font-semibold text-gray-500"
+          class="text-xs font-semibold tracking-wide text-gray-500 uppercase"
         >
           Ukens visdomsord
         </span>
         <br>
         {{ thisWeekProverb.ordtak }}
       </p>
-      <p class="text-teal-800 font-bold text-right">
+      <p class="font-bold text-right text-teal-800">
         –{{ thisWeekProverb.coolPerson }}
       </p>
     </div>
-    <div v-if="showExplanation" class="w-full flex justify-center">
+    <div v-if="showExplanation" class="flex justify-center w-full">
       <p class="text-sm text-gray-700">
         ({{ thisWeekProverb.betydning }})
       </p>
     </div>
-    <div v-else class="w-full flex justify-center">
+    <div v-else class="flex justify-center w-full">
       <p class="text-sm text-gray-700 cursor-pointer">
         ?
       </p>

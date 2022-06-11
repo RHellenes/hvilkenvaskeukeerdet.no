@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Regular', 400, normal, woff);
+@include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Bold', 600, normal, woff);
+@include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Italic', 400, italic, woff);
+
 body{
   margin:0;
 }

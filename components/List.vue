@@ -1,21 +1,16 @@
 <template>
-  <div class="bg-white shadow-md overflow-hidden rounded-md">
-    <div class="bg-white px-4 py-2 sm:px-6 my-3">
-      <h1 class="text-2xl font-medium text-gray-900">
-        Hvilken vaskeuke er det?
-      </h1>
-    </div>
+  <div class="overflow-hidden bg-white rounded-md shadow-md">
     <dl>
       <div
         v-for="(element, index) in concatinatedList"
         :key="element.chore"
-        class="px-4 py-5 grid grid-cols-4 sm:gap-4 sm:px-6"
+        class="grid grid-cols-4 px-4 py-5 sm:gap-4 sm:px-6"
         :class="index % 2 ? 'bg-white' : 'bg-gray-50'"
       >
-        <dt class="text-sm font-medium text-gray-600 col-span-2">
+        <dt class="col-span-2 text-sm font-medium text-gray-600">
           {{ element.chore }}
         </dt>
-        <dd class="text-sm text-gray-900 col-span-2">
+        <dd class="col-span-2 text-sm text-gray-900">
           {{ element.coolPerson }}
         </dd>
       </div>

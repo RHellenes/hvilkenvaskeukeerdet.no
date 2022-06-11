@@ -1,8 +1,13 @@
 <template>
-  <div class="bg-gray-50 min-h-screen">
+  <div class="min-h-screen bg-gray-50">
     <Nuxt />
   </div>
 </template>
+<script>
+export default {
+  name: 'DefaultLayout'
+}
+</script>
 
 <style>
 body {

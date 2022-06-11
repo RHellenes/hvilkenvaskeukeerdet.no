@@ -1,15 +1,19 @@
 <template>
-  <div class="flex flex-col max-w-3xl gap-4 px-3 py-3 m-auto">
-    <div class="md:w-full">
-      <Quote :this-week-proverb="proverbs[currentWeek - 1]" />
+  <div class="grid max-w-3xl grid-cols-12 gap-4 px-3 m-auto">
+    <div class="col-span-12 p-4 bg-white">
+      <h1 class="text-2xl font-medium text-gray-900">
+        Hvilken vaskeuke er det?
+      </h1>
     </div>
-
-    <div class="md:w-1/2">
+    <div class="col-span-12 md:col-span-6">
       <List
         :table-data="tableData"
         :current-week="currentWeek"
         :chores="chores"
       />
+    </div>
+    <div class="col-span-12 md:col-span-6">
+      <Quote :this-week-proverb="proverbs[currentWeek - 1]" />
     </div>
 
     <!-- <PushTest /> -->

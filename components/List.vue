@@ -7,10 +7,10 @@
         class="grid grid-cols-4 px-4 py-5 sm:gap-4 sm:px-6"
         :class="index % 2 ? 'bg-white' : 'bg-gray-50'"
       >
-        <dt class="col-span-2 text-sm font-medium text-gray-600">
+        <dt class="col-span-2 text-sm font-medium text-emerald-800">
           {{ element.chore }}
         </dt>
-        <dd class="col-span-2 text-sm text-gray-900">
+        <dd class="col-span-2 text-sm text-emerald-900">
           {{ element.coolPerson }}
         </dd>
       </div>

@@ -5,6 +5,7 @@
 @include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Regular', 400, normal, woff);
 @include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Bold', 600, normal, woff);
 @include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Italic', 400, italic, woff);
+@include font-face( Ranade, '~/assets/fonts/ranade/fonts/Ranade-Medium', 400, semibold, woff);
 
 body{
   margin:0;

@@ -12,12 +12,12 @@
       />
     </div>
 
-    <PushTest />
+    <!-- <PushTest /> -->
   </div>
 </template>
 
 <script>
-import PushTest from '@/components/PushTest.vue'
+// import PushTest from '@/components/PushTest.vue'
 import List from '@/components/List.vue'
 import Quote from '@/components/Quote.vue'
 
@@ -25,8 +25,8 @@ export default {
   name: 'VaskeukePage',
   components: {
     List,
-    Quote,
-    PushTest
+    Quote
+    // PushTest
   },
   async asyncData ({ $content }) {
     const doc = await $content('proverbs').fetch()

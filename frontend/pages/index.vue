@@ -1,6 +1,9 @@
 <template>
   <div class="grid max-w-3xl grid-cols-12 gap-4 px-3 py-5 m-auto">
-    <div class="col-span-12  md:col-span-6">
+    <!-- <div class="flex col-span-12 md:col-span-6">
+      <Login />
+    </div> -->
+    <div class="col-span-12 md:col-span-6">
       <Quote :this-week-proverb="proverbs[currentWeek - 1]" />
     </div>
     <div class="flex flex-col justify-end col-span-12 md:col-span-6">
@@ -19,13 +22,15 @@
 // import PushTest from '@/components/PushTest.vue'
 import List from '@/components/List.vue'
 import Quote from '@/components/Quote.vue'
+import Login from '~/components/Login.vue'
 
 export default {
   name: 'VaskeukePage',
   components: {
     List,
-    Quote
-    // PushTest
+    Quote, // PushTest
+
+    Login
   },
   async asyncData ({ $content }) {
     const doc = await $content('proverbs').fetch()

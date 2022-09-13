@@ -9,7 +9,7 @@
 <script lang="ts">
 
 import Vue from 'vue'
-import LoginVue from '../Login.vue'
+import LoginVue from '../auth/Login.vue'
 export default Vue.extend({
   name: 'HeaderComponent',
   components: {

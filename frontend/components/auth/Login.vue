@@ -21,7 +21,9 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'LoginVue',
   data: () => ({
-    isPromptOpen: true
+    isPromptOpen: true,
+    email: '',
+    password: ''
   }),
   methods: {
     handleSubmit (event) {

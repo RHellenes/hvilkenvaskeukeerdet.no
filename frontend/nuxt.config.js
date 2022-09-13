@@ -50,47 +50,45 @@ export default {
   modules: [
 
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
-    '@nuxtjs/firebase'
+    '@nuxt/content'
 
   ],
-  firebase: {
-    config: {
-      apiKey: 'AIzaSyAdt-mgM6FBa-4jjMFlGTHNOsyqEn6Z0fg',
-      authDomain: 'hvilken-vaskeuke-er-det.firebaseapp.com',
-      databaseURL: 'https://hvilken-vaskeuke-er-det-default-rtdb.europe-west1.firebasedatabase.app',
-      projectId: 'hvilken-vaskeuke-er-det',
-      storageBucket: 'hvilken-vaskeuke-er-det.appspot.com',
-      messagingSenderId: '184428787142',
-      appId: '1:184428787142:web:0e91a58b5f7b3f438e6ec7',
-      measurementId: 'G-Z79S0VEE5Y'
-    },
-    services: {
-      messaging: {
-        createServiceWorker: true,
-        actions: [
-          {
-            action: 'goToVg',
-            url: 'https://vg.no'
-          }
-        ]
-      }
+  // firebase: {
+  //   config: {
+  //     apiKey: 'AIzaSyAdt-mgM6FBa-4jjMFlGTHNOsyqEn6Z0fg',
+  //     authDomain: 'hvilken-vaskeuke-er-det.firebaseapp.com',
+  //     databaseURL: 'https://hvilken-vaskeuke-er-det-default-rtdb.europe-west1.firebasedatabase.app',
+  //     projectId: 'hvilken-vaskeuke-er-det',
+  //     storageBucket: 'hvilken-vaskeuke-er-det.appspot.com',
+  //     messagingSenderId: '184428787142',
+  //     appId: '1:184428787142:web:0e91a58b5f7b3f438e6ec7',
+  //     measurementId: 'G-Z79S0VEE5Y'
+  //   },
+  //   services: {
+  //     messaging: {
+  //       createServiceWorker: true,
+  //       actions: [
+  //         {
+  //           action: 'goToVg',
+  //           url: 'https://vg.no'
+  //         }
+  //       ]
+  //     }
 
-    }
-  },
+  //   }
+  // },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      name: 'Hvilken vaskeuke er det?',
-      short_name: 'Vaskeuke',
-      description: 'Nettside for å huske hva man skal vaske denne uken',
-      lang: 'no',
-      useWebmanifestExtension: false
-    }
-  },
+  // pwa: {
+  //   manifest: {
+  //     name: 'Hvilken vaskeuke er det?',
+  //     short_name: 'Vaskeuke',
+  //     description: 'Nettside for å huske hva man skal vaske denne uken',
+  //     lang: 'no',
+  //     useWebmanifestExtension: false
+  //   }
+  // },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},

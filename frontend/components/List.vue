@@ -3,15 +3,16 @@
     <dl>
       <div
         v-for="(element, index) in concatinatedList"
-        :key="element.chore"
+        :key="element.chore.title"
         class="grid grid-cols-6 px-4 py-5 sm:gap-4 sm:px-6"
         :class="index % 2 ? 'bg-white' : 'bg-gray-50'"
       >
         <dt class="col-span-4 text-sm font-medium text-emerald-800">
-          <img :src="`https://fav.farm/${getIconLink(element.chore)}`" :aria-hidden="true" class="inline-block w-6 mr-4"> {{ element.chore }}
+          <!--  <img :src="`https://fav.farm/${getIconLink(element.chore)}`" :aria-hidden="true" class="inline-block w-6 mr-4"> -->
+          {{ element.chore.title }}
         </dt>
         <dd class="col-span-2 text-sm text-emerald-900">
-          {{ element.coolPerson }}
+          {{ element.name }}
         </dd>
       </div>
     </dl>
@@ -22,18 +23,16 @@
 export default {
   name: 'ListComp',
   // eslint-disable-next-line vue/require-prop-types
-  props: ['tableData', 'currentWeek', 'chores', 'thisWeekProverb'],
+  props: ['tableData', 'currentWeek', 'chores'],
   computed: {
-    thisWeeksRotation () {
-      return this.tableData[this.currentWeek - 1]
-    },
+
     concatinatedList () {
       const list = []
-      const thisWeeksRotation = this.thisWeeksRotation.coolPersons
+
       this.chores.forEach((chore, index) => {
         const obj = {
           chore,
-          coolPerson: thisWeeksRotation[index]
+          name: this.tableData[index]?.name
         }
         list.push(obj)
       })

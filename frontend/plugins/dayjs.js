@@ -5,13 +5,14 @@ import dayjs from 'dayjs'
 // import weekOfYear from 'dayjs/plugin/weekOfYear' // ES 2015
 // import utc from 'dayjs/plugin/utc'
 import isoWeek from 'dayjs/plugin/isoWeek'
+import weekOfYear from 'dayjs/plugin/weekOfYear'
 import isoWeeksInYear from 'dayjs/plugin/isoWeeksInYear'
 import isLeapYear from 'dayjs/plugin/isLeapYear'
 
 // eslint-disable-next-line no-unused-vars
 export default ({ app }, inject) => {
   // dayjs.extend(utc)
-  // dayjs.extend(weekOfYear)
+  dayjs.extend(weekOfYear)
   // dayjs.extend(weekYear)
   dayjs.extend(isoWeeksInYear)
   dayjs.extend(isLeapYear)

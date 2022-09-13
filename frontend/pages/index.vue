@@ -22,15 +22,13 @@
 // import PushTest from '@/components/PushTest.vue'
 import List from '@/components/List.vue'
 import Quote from '@/components/Quote.vue'
-import Login from '~/components/Login.vue'
+// import Login from '~/components/Login.vue'
 
 export default {
   name: 'VaskeukePage',
   components: {
     List,
-    Quote, // PushTest
-
-    Login
+    Quote // PushTest
   },
   async asyncData ({ $content }) {
     const doc = await $content('proverbs').fetch()
@@ -66,7 +64,6 @@ export default {
       // const outerCounter = 0
       for (let index = 1; index < totalWeeks; index++) {
         const lastPerson = coolPeopleCopy.pop()
-        // const last = coolPeopleCopy[3]
         coolPeopleCopy = [lastPerson].concat(coolPeopleCopy)
         const week = {
           nr: index,

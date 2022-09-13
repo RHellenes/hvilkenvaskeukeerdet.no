@@ -9,7 +9,10 @@ import {
 } from '@keystone-next/keystone/session';
 
 import { User } from './schemas/User';
+import { Chore } from './schemas/Chore';
+import { Proverb } from './schemas/Proverb';
 import { Product } from './schemas/Product';
+import { Housing } from './schemas/Housing';
 import { ProductImage } from './schemas/ProductImage';
 import { insertSeedData } from './seed-data';
 
@@ -56,12 +59,15 @@ export default withAuth(
     lists: createSchema({
       // Schema items go in here
       User,
+      Chore,
       Product,
+      Proverb,
+      Housing,
       ProductImage,
     }),
     ui: {
       // TODO: change this for roles
-      isAccessAllowed: ({ session }) => !!session?.data,
+      isAccessAllowed: ({ session }) => true,
     },
     // Show the UI only for people who pass this test.
     session: withItemData(statelessSessions(sessionConfig), {

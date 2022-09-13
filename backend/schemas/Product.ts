@@ -21,7 +21,7 @@ export const Product = list({
         inlineConnect: false,
       },
     }),
-    status: select({
+    status: select({ 
       options: [
         { label: 'Draft', value: 'DRAFT' },
         { label: 'Available', value: 'AVAILABLE' },

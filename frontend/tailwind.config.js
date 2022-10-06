@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Ranade']
+      sans: ['Ranade-Variable']
     }
   },
   variants: {
